@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Développement - Rapport de Stage</title>
+    <style>
+        :root {
+            --primary-blue: #1a73e8;
+            --light-blue: #e8f0fe;
+            --dark-blue: #0d47a1;
+            --white: #ffffff;
+            --light-gray: #f5f5f5;
+            --text-color: #333333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--white);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: var(--white);
+            padding: 1.5rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+        
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 0.5rem;
+        }
+        
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--light-blue);
+        }
+
+        main {
+            padding: 3rem 0;
+        }
+
+        main h1 {
+            text-align: center;
+            color: var(--dark-blue);
+            margin-bottom: 2rem;
+            font-size: 2.8rem;
+        }
+
+        main p {
+            max-width: 900px;
+            margin: 0 auto 1.5rem;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            max-width: 900px;
+            height: 350px;
+            margin: 2rem auto;
+            background-color: var(--light-blue);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark-blue);
+            font-size: 1.5rem;
+            font-style: italic;
+            user-select: none;
+        }
+
+        footer {
+            background: var(--dark-blue);
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-text {
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-links a {
+            color: var(--light-blue);
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            main h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">Portfolio</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="introduction.html">Introduction</a></li>
+                    <li><a href="fiche_entreprise.html">Fiche Entreprise</a></li>
+                    <li><a href="developpement.html">Projet & Veille</a></li>
+                    <li><a href="conclusion.html" class="active">Conclusion</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1>Conclusion</h1>
+        <p>Ce stage a été pour moi une expérience particulièrement enrichissante, tant sur le plan professionnel que personnel. Il m’a permis de découvrir de l’intérieur le fonctionnement d’une entreprise et de mieux comprendre les enjeux liés au domaine de l’informatique, en particulier celui de la cybersécurité. J’ai pu mesurer l’ampleur et la diversité de ce secteur en pleine évolution, et acquérir une première expérience concrète au sein d’une équipe spécialisée.</p>
+        
+        <p>Au fil des semaines, j’ai eu l’opportunité d’échanger avec différents professionnels du pôle cybersécurité, chacun ayant un rôle et des missions spécifiques. Ces échanges m’ont permis de mieux cerner les multiples facettes des métiers liés à la sécurité informatique. J’ai également consolidé mes connaissances techniques, tout en développant de nouvelles compétences que je n’avais encore jamais abordées en cours.</p>
+        
+        <p>Ce stage m’a donné une avance précieuse pour la suite de ma formation, notamment grâce à la pratique de la veille technologique et à l’analyse comparative de solutions de sécurité. J’ai appris à travailler de manière plus autonome, à m’adapter rapidement, et à approfondir mes recherches de manière rigoureuse.</p>
+
+        <p>Je tiens à remercier chaleureusement mon tuteur de stage, Monsieur STEVANCE, pour son accompagnement, sa disponibilité, et le temps qu’il m’a consacré. Son soutien et ses explications m’ont grandement aidé à progresser et à tirer le meilleur de cette expérience.</p>
+
+        <h1>Lexique & Index</h1>
+        <p>Application Veille Technologique : Feedly</p>
+        <p>Logiciel pour télécharger des iso de Windows légal : ISO Downloader </p>
+        <p>Serveur de virtualisation utilisé : VMware</p>
+        <p>Serveur utilisé : Windows Server 2018, Kali Linux, Debian , pfSense</p>
+        <p>Site Tuto : ITConnect</p>
+
+
+    <footer>
+        <div class="container">
+            <div class="footer-text">
+                <p>© 2025 Rapport de Stage - Cybersécurité. Tous droits réservés.</p>
+                <p>BTS SIO SISR - Stage étudiant</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Accueil</a>
+                <a href="introduction.html">Introduction</a>
+                <a href="fiche_entreprise.html">Fiche Entreprise</a>
+                <a href="developpement.html">Développement</a>
+                <a href="conclusion.html">Conclusion</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

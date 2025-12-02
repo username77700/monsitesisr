@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Développement - Rapport de Stage</title>
+    <style>
+        :root {
+            --primary-blue: #1a73e8;
+            --light-blue: #e8f0fe;
+            --dark-blue: #0d47a1;
+            --white: #ffffff;
+            --light-gray: #f5f5f5;
+            --text-color: #333333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--white);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: var(--white);
+            padding: 1.5rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+        
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 0.5rem;
+        }
+        
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--light-blue);
+        }
+
+        main {
+            padding: 3rem 0;
+        }
+
+        main h1 {
+            text-align: center;
+            color: var(--dark-blue);
+            margin-bottom: 2rem;
+            font-size: 2.8rem;
+        }
+
+        main p {
+            max-width: 900px;
+            margin: 0 auto 1.5rem;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            max-width: 900px;
+            height: 350px;
+            margin: 2rem auto;
+            background-color: var(--light-blue);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark-blue);
+            font-size: 1.5rem;
+            font-style: italic;
+            user-select: none;
+        }
+
+        footer {
+            background: var(--dark-blue);
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-text {
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-links a {
+            color: var(--light-blue);
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            main h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">Portfolio</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="introduction.html">Introduction</a></li>
+                    <li><a href="fiche_entreprise.html">Fiche Entreprise</a></li>
+                    <li><a href="developpement.html" class="active">Projet & Veille</a></li>
+                    <li><a href="conclusion.html">Conclusion</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <h1>Création Lab</h1>
+        <p>La mission qui m’a le plus intéressé et apporté lors de ce stage a été la création d’un LAB réseau. Ce projet m’a permis d’explorer et de configurer de nombreux éléments techniques à l’aide de machines virtuelles sur VMware.</p>
+        
+        <p>Dans un premier temps, j’ai appris à configurer pfSense, un logiciel open source de sécurité réseau qui transforme un ordinateur en pare-feu et routeur sophistiqué. Après avoir installé pfSense sur une machine virtuelle, j’ai utilisé une seconde machine virtuelle, Kali Linux, pour accéder à l’interface web d’administration (le dashboard) de pfSense. J’ai alors pu configurer l’ensemble des paramètres proposés : mise en place du firewall, planification des adresses IP, configuration des interfaces LAN, WAN et DMZ.</p>
+        
+        <div class="image-placeholder"><img src="images/adp11.png"></div>
+        
+        <p>Une fois cette première étape terminée, j’ai mis en place une redondance pfSense. Cela consistait à créer une seconde instance de pfSense, agissant comme système de secours. En cas de panne du premier pare-feu, le second prend automatiquement le relais, assurant ainsi la continuité du service sans interruption réseau. Pour cela, j’ai utilisé les technologies CARP et pfsync.</p>
+
+        <div class="image-placeholder"><img src="images/adp12.png"></div>
+
+        <p>Ensuite, j’ai utilisé une autre machine virtuelle sous Windows Server. J’y ai d’abord effectué la configuration réseau de base, puis j’ai ajouté un outil permettant de créer un Active Directory (AD). L’Active Directory est un service d’annuaire permettant de centraliser la gestion des utilisateurs et des ressources dans un environnement Windows, utilisé par de très nombreuses entreprises.</p>
+
+        <p>J’ai ensuite créé trois utilisateurs et trois fichiers, et j’ai attribué à chaque utilisateur un accès en lecture uniquement à son propre fichier. Pour ce faire, j’ai activé le partage de dossiers et mis en place les droits d’accès appropriés, garantissant la confidentialité entre les utilisateurs.</p>
+
+        <div class="image-placeholder"><img src="images/adp13.png"></div>
+
+        <p>Enfin, pour compléter ce LAB et aller plus loin, il m’a été demandé d’implémenter une solution de supervision réseau. J’ai choisi Wazuh, un outil open source de surveillance de la sécurité et des performances. Pour cela, j’ai utilisé une machine virtuelle Debian sans interface graphique, et j’ai procédé à l’installation de Wazuh via ligne de commande. Une fois installé et configuré, j’ai pu accéder à l’interface de gestion de Wazuh depuis le Windows Server, ce qui m’a permis de visualiser en temps réel l’état du réseau et des machines.</p>
+
+        <h1>Projet Bastion</h1>
+        <p>Le projet Bastion constitue actuellement l’un des sujets majeurs au sein du pôle auquel j’ai eu la chance d’accompagner mon tuteur dans ses tâches.
+Le projet Bastion du Groupe ADP est une initiative visant à renforcer la sécurité des systèmes d'information au sein des aéroports parisiens. Ce projet implique la mise en place d'un bastion, c'est-à-dire un point d'accès sécurisé et centralisé permettant de contrôler et de tracer les connexions aux systèmes critiques de l'entreprise. </p>
+        
+        <p>Le projet Bastion est mis en œuvre en collaboration avec une entreprise spécialisée dans la gestion des accès privilégiés et la sécurité des systèmes d'information. Cette collaboration permet au Groupe ADP de bénéficier d'une solution robuste pour la gestion des accès aux systèmes sensibles, renforçant ainsi la résilience de ses infrastructures face aux cybermenaces.</p>
+        
+        <p>Ce projet s'inscrit dans la stratégie plus large du Groupe ADP visant à moderniser et sécuriser ses infrastructures numériques, en réponse aux enjeux croissants de cybersécurité dans le secteur aéroportuaire.</p>
+        
+        <div class="image-placeholder"><img src="images/adp8.png"></div>
+
+        <p>J’ai pu assister à certaines réunions impliquant d’autres pôles afin de discuter de la mise en place de ce système et de détecter les éventuels obstacles en termes de cybersécurité qui peuvent être rencontrés. 
+Mon tuteur m’a également appris à rédiger une comparaison pertinente de solutions, une compétence essentielle et régulièrement utilisée en BTS SIO.
+Dans le cadre de cette première comparaison de solutions, j’ai analysé et mis en parallèle les choix de deux entreprises utilisant des bastions distincts. Cela m’a permis d’approfondir mes connaissances sur le sujet des bastions, ainsi que de mieux comprendre les différentes caractéristiques spécifiques que ce type d’équipement peut offrir.
+Les deux entreprises sont Thales, utilisant le bastion de Wallix, et Amazon, utilisant des solutions cloud.
+</p>
+
+        <h1>Réunions</h1>
+        <p>Durant ce stage, j’ai eu l’opportunité d’accompagner mon tuteur dans certaines réunions concernant les sujets actuels auxquels il doit appliquer des homologations cyber et vérifier leur application pour éviter toute menace.</p>
+        
+        <p>La première réunion concernait le sujet Bastion, dans laquelle nous avons pu parler avec un autre pôle du Groupe ADP, afin de s’assurer qu’il n’y ait pas de non-conformité du système, donc pas de trou de sécurité. L’autre pôle ne disposant pas de Bastion, il a également été question d’une migration vers ce nouveau dispositif.
+            La seconde réunion avait pour sujet les Tri Bagages et leur sécurité cyber. Dans le cadre de leur rénovation, il a été décidé d’établir un niveau de sécurité conforme en appliquant la PSSI (politique interne) ainsi que la GPO (Group Policy Object), permettant d’administrer un serveur physique à distance à l’aide de une carte additionnelle d'administration.</p>
+        
+        <p>Une autre réunion qui a été très intéressante a été celle où nous nous sommes rendus à la CTFE, un espace sécurisé, dans laquelle nous avons parlé d’une cartographie et d’équipements : deux sondes à déplacer et brancher. Lors de cette réunion, nous sommes allés dans une salle serveur où j’ai pu voir des baies de brassage ainsi que des firewalls.</p>
+        
+        <div class="image-placeholder"><img src="images/adp14.png"></div>
+
+        <p>Quelques jours plus tard, je n’ai pas pu être présent, mais la sonde a bien été installée, comme le montrent les photos ci-jointes. Elle est restée branchée pendant une durée de 24 à 48 heures.</p>
+        <p>Durant cette période, la sonde a capturé et analysé tous les paquets réseau qu’elle recevait grâce à son mode de branchement. Elle a également tenté d’analyser les composants et systèmes accessibles sur le réseau.</p>
+        <p>À l’issue de cette période, une nouvelle intervention a eu lieu dans la salle serveur afin de retirer la sonde. Une opération logicielle spécifique a alors été effectuée par l’équipe technique du pôle cybersécurité : les données collectées ont été téléchargées et transférées sur une clé USB, pour permettre une cartographie et, en cas de besoin, faciliter l’identification et la résolution d’éventuels problèmes. Une fois cette manipulation terminée, la sonde a été débranchée.</p>
+
+        <div class="image-placeholder"><img src="images/adp15.png"></div>
+
+        <h1>Projet SISR & SLAM</h1>
+        <p>Au cours de ma première année de BTS SIO option SISR, j’ai pu mener plusieurs projets concrets qui m’ont permis de développer mes compétences techniques et ma compréhension des infrastructures réseau. J’ai notamment réalisé la mise en place d’environnements virtualisés, configuré des réseaux locaux avec VLAN, DHCP, DNS et routage, ainsi que déployé des pare-feu tels que pfSense avec des règles de filtrage adaptées. J’ai également travaillé sur la configuration de serveurs Linux et Windows, l’installation de services (Apache, FTP, Active Directory), ainsi que la gestion des utilisateurs et des droits. Ces projets m’ont permis de renforcer mes capacités d’analyse, de résolution de problèmes et d’administration système, tout en me donnant une vision plus précise des enjeux liés à la sécurité et à la disponibilité d’une infrastructure.</p>
+
+        <h1>Projet Indépendant</h1>
+        <p>En parallèle de ma formation, je mène également des projets personnels autour de l’automatisation et de l’intelligence artificielle. Je m’intéresse particulièrement à la création d’outils automatisés, de scripts intelligents et de systèmes capables d’optimiser des tâches répétitives ou d’améliorer l’efficacité d’un workflow. Ces projets me permettent d’explorer de nouvelles technologies, d’expérimenter avec des API d’IA et de renforcer mes compétences en programmation. J’ai par ailleurs réalisé de nombreux projets au cours de l’année, dont je citerai les principaux pour illustrer la variété des compétences acquises et des situations auxquelles j’ai pu être confronté.</p>
+
+        <h1>Veille Technologique</h1>
+        <p>Une des premières tâches que j’ai également pu réaliser, et qui me sera utile pour ma seconde année de BTS SIO ainsi que tout au long de ma carrière en informatique, a été de créer une veille technologique.
+        Une veille technologique est un gestionnaire d’informations, tendant à l’automatisation, qui a pour objectif d’identifier les nouveautés, les innovations ainsi que les tendances du monde entier dans un domaine choisi en particulier. Pour ma veille technologique, j’ai utilisé l’application Feedly.</p>
+
+        <div class="image-placeholder"><img src="images/adp9.png"></div>     
+
+        <p>Cette application regroupe toutes les sources d’informations et d’outils afin d’organiser sa propre veille technologique. Ma veille technologique se regroupe en 3 catégories, auxquelles j’ai ajouté des sources fiables et populaires. Une fois les catégories créer et les sources ajoutées, l’applications s’illustre comme un réseau social ou ils nous restent a défilés la pages et lire les nouvel.</p>
+        
+           <div class="image-placeholder"><img src="images/adp10.png"></div>  
+        <p>Cette veille est un outil super important dans la vie d’une personne travaillant dans l’informatique car cela lui permet de rester au courant de toutes les nouvelles du monde concernant les domaines qui intéresse l’utilisateur.</p>
+
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-text">
+                <p>© 2025 Rapport de Stage - Cybersécurité. Tous droits réservés.</p>
+                <p>BTS SIO SISR - Stage étudiant</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Accueil</a>
+                <a href="introduction.html">Introduction</a>
+                <a href="fiche_entreprise.html">Fiche Entreprise</a>
+                <a href="developpement.html">Développement</a>
+                <a href="conclusion.html">Conclusion</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
